@@ -16,16 +16,11 @@ body {
     overflow-x: hidden;
 }
 
-#crsr {
-    height: 2.5vw;
-    width: 2.5vw;
-    border-radius: 50%;
-    /* background-color: white; */
-    border: 1px solid #fff;
-    position: fixed;
-    z-index: 997;
+.mousefollower{
+    border: 2px solid #fff;
+    background-color: rgb(255, 255, 255);
+    scale: 2;
     mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
 }
 
 #loader {
@@ -212,20 +207,16 @@ body {
     left: 28%;
     /* background-color: aqua; */
     background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-#video-container img {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    top: 0;
-}
 
 #video-container video {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    opacity: 0;
 }
 
 #video-Cursor {
@@ -250,8 +241,138 @@ body {
 #page3 {
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(67, 53, 53);
+    /* background-color: rgb(67, 53, 53); */
     position: relative;
+    padding: 17vh 2vw;
+    margin-bottom: 20vh;
+    margin-top: 20vh;
+}
+#page3 .underline{
+    margin-left: 25vw;
+}
+
+#page3 h1 {
+    font-size: 7vw;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    margin-left: 25vw;
+}
+
+#page3 h1:before {
+    content: "02";
+    position: absolute;
+    font-size: 3vw;
+    font-style: italic;
+    font-weight: 100;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    left: -12%;
+    top: 20%;
+}
+#image-div-container{
+/* background-color: aqua; */
+padding: 4vw;
+position: relative;
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-wrap: wrap;
+gap: 2vw;
+}
+.image-div{
+    height: 38vw;
+    width: 27vw;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* background-color: #ffa63d; */
+}
+.image-div:nth-child(1){
+    height:29vw ;
+    width: 21 vw;
+}
+
+
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page3-circle1{
+ height: 23vw;
+ width: 23vw;
+ border: 2px solid #fff;
+ border-radius: 50%;  
+ display: flex;
+position: relative;
+ align-items: center;
+ justify-content: center;
+ margin-top: 25vh;
+ margin-left: 6vw;
+}
+
+.page3-circle1 svg{
+    height: 30%;
+}
+.page3-circle2 {
+    height: 23vw;
+    width: 23vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 25vh;
+    margin-left: 6vw; */
+}
+
+.page3-circle2 svg {
+    height: 30%;
+    rotate: -45deg;
+}
+.circle-in{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+    transition: all ease 0.3s;
+    border-radius: 50%;
+}
+.circle-in p{
+   font-size: 1vw;  
+    color: black;
+    font-weight: 500;
+    width: 60%;
+    scale: 0;
+    transition: all ease 0.5s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+.page3-circle1:hover .circle-in{
+    scale: 1;
+}
+.page3-circle1:hover p{
+    scale: 1;
+    opacity: 1;
+}
+
+.page3-circle2:hover .circle-in {
+    scale: 1;
+}
+
+.page3-circle2:hover p {
+    scale: 1;
+    opacity: 1;
 }
 
 #page4 {
@@ -433,6 +554,7 @@ body {
     font-weight: 100;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     /* background-color: aqua; */
+    
 }
 #footer h1:before {
     content: "04";
@@ -472,3 +594,21 @@ body {
     font-weight: 200;
 }
 
+._canvas_container{
+    z-index: 999999 !important;
+    pointer-events: none;
+}
+
+#Flag{
+    position: absolute;
+    height: 25vw ;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+#middlepart3{
+    z-index: 9999;
+    position: relative;
+}
